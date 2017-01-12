@@ -18,21 +18,19 @@ function getRBtnName(GrpName) {
 
 function DisplayPrice(price){
   var val1 = getRBtnName('part1').split(',');
-  var val2 = getRBtnName('part2').split(',');
+  var val2 = getRBtnName('part2').split(','); 
   var val3 = getRBtnName('part3').split(',');
-  var val4 = getRBtnName('part4').split(',');
 
-  var sum=parseInt(val1[0]) + parseInt(val2[0]) + parseInt(val3[0]) + parseInt(val4[0]);
+  var sum=parseInt(val1[0]) + parseInt(val2[0]) + parseInt(val3[0]);
   document.getElementById('totalSum').value=sum;
   
-  var str=val1[1] +'\n'+ val2[1] +'\n'+ val3[1] +'\n'+ val4[1] + '\n';
+  var str=val1[1] +'\n' + val2[1] +'\n' + val3[1];
   document.getElementById('TArea').value=str;
   
-  sum=parseInt(val1[2]) + parseInt(val2[2]) + parseInt(val3[2] + parseInt(val4[2]));
-  document.getElementById('markup').value=sum;
- 
- 
+  sum=parseInt(val1[2]) + parseInt(val2[2]) + parseInt(val3[2]);
+  document.getElementById('markup').value=sum; 
 }
+
 onload=function() {
   DisplayPrice();	
 }
@@ -52,15 +50,9 @@ Choose your pizza Size<br>
 <input type="radio" value="0,Regular Cheese,0" name="part2" checked="checked" onclick="DisplayPrice();">Regular Cheese<br>
 <input type="radio" value="3,Extra Cheese,3" name="part2" onclick="DisplayPrice();">Extra Cheese<br>
 
-
 <br>Crust:<br>
 <input type="radio" value="0,Regular Crust,0" name="part3" checked="checked" onclick="DisplayPrice();">Regular Crust<br>
 <input type="radio" value="3,Cheese Stuffed Crust,3" name="part3" onclick="DisplayPrice();">Cheese Stuffed Crust<br>
-
-<br>Veggies:<br>
-<input type="checkbox" value="0,None,0" name="part4" checked="checked" onclick="DisplayPrice():">No veggies<br>
-<input type="checkbox" value="1,Tomatoes,1" name="part4" onclick="DisplayPrice():">Tomatoes<br>
-
  
 <br>
 <table border="1">
